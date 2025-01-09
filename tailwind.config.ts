@@ -1,18 +1,28 @@
 import type { Config } from "tailwindcss";
+import {nextui} from "@nextui-org/react";
 
-export default {
-  content: [
+module.exports = {
+  content:[
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/components/(button|ripple|spinner).js"
   ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+  plugins: [
+    nextui({
+      prefix: 'nextui',
+      themes: {
+        'dark': {
+          colors: {
+            primary: {
+              DEFAULT: "#20d5a5",
+              foreground: '#20d5a5',
+            },
+            focus: "#20d5a5",
+          },
+        },
       },
-    },
-  },
-  plugins: [],
-} satisfies Config;
+    }),
+  ],
+};

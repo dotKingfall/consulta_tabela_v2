@@ -1,0 +1,27 @@
+
+.title{
+  width: 100%;
+  text-align: center;
+
+  color: hsl(var(--nextui-primary));
+  font-size: 2.5em;
+  line-height: 1em;
+
+  padding-top: 10px;
+}
+
+.subtitle{
+  text-align: center;
+
+  color: hsl(var(--nextui-primary));
+  font-size: .9em;
+}
+
+.themeSwitch{
+  position: absolute;
+
+  top: 1em;
+  right: 0;
+
+  margin-right: 1em;
+}
