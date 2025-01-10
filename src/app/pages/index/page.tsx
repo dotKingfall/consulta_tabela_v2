@@ -1,6 +1,7 @@
 import { IBM_Plex_Sans } from 'next/font/google'
-import './styling/title.css'
+import './styling/titlebar.css'
 import TitleBar from './titlebar';
+import NavBar from './navbar';
 
 const titleFont = IBM_Plex_Sans({
     subsets: ['latin'],
@@ -18,7 +19,7 @@ export default function Index(){
             }
                 `}</style>
             <TitleBar></TitleBar>
-            <nav>TODO NAV</nav>
+            <NavBar></NavBar>
             <main>TODO MAIN</main>
             <footer>TODO FOOTER</footer>
         </div>

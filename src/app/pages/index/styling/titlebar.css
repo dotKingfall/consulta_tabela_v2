@@ -26,3 +26,8 @@
 
   margin-right: 1em;
 }
+
+.divider-light{
+  margin-top: 5px;
+  border: 1px solid hsl(var(--nextui-primary));
+}

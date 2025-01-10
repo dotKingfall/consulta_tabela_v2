@@ -6,3 +6,7 @@
   background: linear-gradient(#a2cea2 5%, #485B48) no-repeat;
   background-attachment: fixed;
 }
+
+[data-theme="dark"] .divider-light{
+  visibility: hidden;
+}

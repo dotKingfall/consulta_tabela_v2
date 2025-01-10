@@ -1,0 +1,17 @@
+
+li{
+  display: inline;
+  margin-right: 10px;
+
+  font-weight: 400;
+  color: hsl(var(--nextui-primary));
+}
+
+#pj, #pf{
+  position: fixed;
+  
+}
+
+#pj{
+  display: none;
+}
