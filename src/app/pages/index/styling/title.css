@@ -19,6 +19,7 @@
 
 .themeSwitch{
   position: absolute;
+  width: 120px;
 
   top: 1em;
   right: 0;

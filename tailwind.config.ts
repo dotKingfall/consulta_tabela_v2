@@ -16,12 +16,24 @@ module.exports = {
         'dark': {
           colors: {
             primary: {
-              DEFAULT: "#20d5a5",
+              DEFAULT: '#20d5a5',
               foreground: '#20d5a5',
             },
-            focus: "#20d5a5",
+            focus: '#20d5a5',
+            background:'#040406'
           },
         },
+
+        'light': {
+          colors: {
+            primary:{
+              DEFAULT: '#223e27',
+              foreground: '#223e27',
+            },
+            focus: '#223e27',
+            background:'#223e27'
+          }
+        }
       },
     }),
   ],
