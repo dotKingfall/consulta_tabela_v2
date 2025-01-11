@@ -2,6 +2,9 @@ import { IBM_Plex_Sans } from 'next/font/google'
 import './styling/titlebar.css'
 import TitleBar from './titlebar';
 import NavBar from './navbar';
+import { Session } from './sessionClasses';
+
+export var thisSession = new Session(0, 0, 0, 0, 0);
 
 const titleFont = IBM_Plex_Sans({
     subsets: ['latin'],

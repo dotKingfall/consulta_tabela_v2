@@ -12,6 +12,7 @@ import React from "react";
 import './styling/navbar.css';
 import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
+import { thisSession } from "./page";
 
 export default function NavBar(){
   const { theme } = useTheme();
@@ -21,25 +22,71 @@ export default function NavBar(){
     setSelectedPlace(place); //TODO MORE
   }
 
-  function pessoaChangeHandler(doc: Document, choice: Number){
-    if(choice === 1){
-      doc.getElementById("pf")!.style.display = 'none';
-      doc.getElementById("pj")!.style.display = "inline";
-    }else{
-      doc.getElementById("pj")!.style.display = "none";
-      doc.getElementById("pf")!.style.display = "inline";
+  function pessoaChangeHandler(doc: Document){
+    const p = doc.getElementById("pessoa")!;
+    const o = doc.getElementById("odonto")!;
+
+    //Replay animation
+    p.style.animationName = "none";
+    p.offsetHeight;
+    p.style.animationName = "";
+    p.style.animationName = "flipCard";
+    p.style.animationPlayState = "paused";
+    
+    if(p.style.animationPlayState !== "running"){
+      p.style.animationPlayState = "running";
+
+      if(thisSession.pessoa === 0){
+        p.textContent = "Jurídica";
+        o.style.transform = "translateX(-90px)";
+        o.style.opacity = '0';
+        o.style.visibility = 'hidden';
+        thisSession.pessoa = 1;
+      }
+      else{
+        p.textContent = "Física";
+        o.style.transform = "translateX(0)";
+        o.style.opacity = '1';
+        o.style.visibility = 'visible';
+        thisSession.pessoa = 0;
+      }
+    }
+  }
+
+  function odontoChangeHandler(doc: Document){
+    const p = doc.getElementById("odonto")!;
+
+    //Replay animation
+    p.style.animationName = "none";
+    p.offsetHeight;
+    p.style.animationName = "";
+    p.style.animationName = "flipCard";
+    p.style.animationPlayState = "paused";
+    
+    if(p.style.animationPlayState !== "running"){
+      p.style.animationPlayState = "running";
+
+      if(thisSession.odonto === 0){
+        p.textContent = "Não";
+        thisSession.odonto = 1;
+      }
+      else{
+        p.textContent = "Sim";
+        thisSession.odonto = 0;
+      }
     }
   }
 
     return(
-        <nav className='mt-2'>
+        <nav className='mt-6'>
             <li>
+              <label className="label ms-3">Cidade:</label>
               <Dropdown key={'cidades'} className={`${theme === 'light' ? 'bg-[#c7e1c7]' : 'bg-[#000d0d]'}`}>
                   <DropdownTrigger>
                       <Button className="text-xl ms-3 gap-1" variant="light" color="primary" endContent={<ChevronDown className="mt-1.5" size={15} />}>{selectedPlace}</Button>
                   </DropdownTrigger>
                   <DropdownMenu items={places}>
-                      <DropdownSection title='Cidades'>
+                      <DropdownSection>
                           {places.map((place) => (
                               <DropdownItem key={place.key} color="secondary" onPress={() => lugarChangeHandler(place.label)}>{place.label}</DropdownItem>
                           ))}
@@ -48,8 +95,12 @@ export default function NavBar(){
               </Dropdown>
             </li>
             <li>
-              <Button id="pf" color="secondary" className="text-lg" onPress={()=> pessoaChangeHandler(document, 1)}>Física</Button>
-              <Button id="pj" color="secondary" className="text-lg" onPress={()=> pessoaChangeHandler(document, 0)}>Jurídica</Button>
+              <label className="label">Pessoa:</label>
+              <Button id="pessoa" color="secondary" className="text-lg w-px" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
+            </li>
+            <li>
+              <label className="label">Odonto:</label>
+              <Button id="odonto" color="secondary" className="text-lg" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
             </li>
         </nav>
     );

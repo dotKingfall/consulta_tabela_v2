@@ -3,7 +3,7 @@ export class Session{
   place: number; //0: Goiânia, 1: Anápolis, 2: Brasília
 
   pessoa: number; //0: Física, 1: Jurídica
-  odonto: number; //0: Não, 1: Sim
+  odonto: number; //0: Sim, 1: Não
 
   desconto: number;
   total: number;

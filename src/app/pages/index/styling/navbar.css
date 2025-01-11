@@ -7,11 +7,44 @@ li{
   color: hsl(var(--nextui-primary));
 }
 
-#pj, #pf{
-  position: fixed;
-  
+#pessoa, #odonto{
+  animation-name: flipCard;
+  animation-play-state: paused;
+  animation-timing-function: ease-out;
+  animation-iteration-count: forwards;
+
+  animation-duration: .4s;
+  animation-fill-mode: alternate;
 }
 
-#pj{
-  display: none;
+#odonto{
+  transition-property: transform, opacity, visibility;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+.label{
+  position: fixed;
+
+  padding-left: 5px;
+  transform: translateY(-22px);
+
+  font-size: .9em;
+}
+
+@keyframes flipCard {
+  0%{
+    transform: RotateY(0deg);
+    color: #f5f5dc;
+  }
+  15%{
+    color:transparent
+  }
+  50%{
+    transform: RotateY(180deg);
+  }
+  100%{
+    transform: RotateY(360deg);
+    color: #f5f5dc;
+  }
 }
