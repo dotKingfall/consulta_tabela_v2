@@ -20,7 +20,7 @@ export default function NavBar(){
 
   function lugarChangeHandler(place: string, key: string){
     setSelectedPlace(place);
-    alert(Number(key));
+    thisSession.place = parseInt(key);
   }
 
   function pessoaChangeHandler(doc: Document){
@@ -137,7 +137,9 @@ export default function NavBar(){
                   <DropdownTrigger>
                       <Button className="text-xl ms-3 gap-1" variant="light" color="primary" endContent={<ChevronDown className="mt-1.5" size={15} />}>{selectedPlace}</Button>
                   </DropdownTrigger>
-                  <DropdownMenu items={places}>
+                  <DropdownMenu items={places} itemClasses={{
+                    base: ["data-[hover=true]:text-insideTextColor"],
+                  }}>
                       <DropdownSection>
                           {places.map((place) => (
                               <DropdownItem key={place.key} color="secondary" onPress={() => lugarChangeHandler(place.label, place.key)}>{place.label}</DropdownItem>
@@ -148,15 +150,15 @@ export default function NavBar(){
             </li>
             <li>
               <label className="label">Pessoa:</label>
-              <Button id="pessoa" color="secondary" className="text-lg w-px" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
+              <Button id="pessoa" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
             </li>
             <li>
               <label id="odontolabel" className="label">Odonto:</label>
-              <Button id="odonto" color="secondary" className="text-lg" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
+              <Button id="odonto" color="secondary" className="text-lg text-insideTextColor" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
             </li>
             <li>
               <label id="modelabel" className="label">Modo:</label>
-              <Button id="mode" color="secondary" className="text-lg w-px" onPress={()=> modeChangeHandler(document)}>Clássico</Button>
+              <Button id="mode" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> modeChangeHandler(document)}>Clássico</Button>
             </li>
         </nav>
     );

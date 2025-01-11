@@ -12,7 +12,11 @@ module.exports = {
   theme:{
     extend:{
       colors:{
-        //add custom colors here
+        'lightergreen': '#20d5a5',
+        'darkergreen': '#000d0d',
+        'darktext': '#757575',
+        'currentTextColor': 'hsl(var(--nextui-secondary-foreground))',
+        'insideTextColor': 'hsl(var(--nextui-primary-foreground))'
       }
     }
   },
@@ -24,11 +28,15 @@ module.exports = {
           colors: {
             primary: {
               DEFAULT: '#20d5a5',
-              foreground: '#20d5a5',
+              foreground: '#c7c7c7',
             },
             secondary:{
               DEFAULT: '#214039',
-              foreground:'#c0c0c0',
+              foreground:'#c7c7c7',
+            },
+            success:{
+              DEFAULT: '#000d0d',
+              foreground: '#20d5a5',
             },
             focus: '#20d5a5',
             background:'#040406'
@@ -39,11 +47,15 @@ module.exports = {
           colors: {
             primary:{
               DEFAULT: '#223e27',
-              foreground: '#223e27',
+              foreground: '#f5f5dc',
             },
             secondary:{
               DEFAULT: '#386c5f',
-              foreground: '#f5f5dc',
+              foreground: '#223e27',
+            },
+            success:{
+              DEFAULT: '#c7e1c7',
+              foreground: '#223e27',
             },
             focus: '#223e27',
           }
