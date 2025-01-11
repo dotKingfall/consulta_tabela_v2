@@ -1,6 +1,7 @@
 
 export class Session{
   place: number; //0: Goiânia, 1: Anápolis, 2: Brasília
+  mode: number; //0: classic, 1: auto
 
   pessoa: number; //0: Física, 1: Jurídica
   odonto: number; //0: Sim, 1: Não
@@ -10,12 +11,14 @@ export class Session{
 
   constructor(
     place: number,
+    mode: number,
     pessoa: number,
     odonto: number,
     desconto: number,
     total: number
   ){
     this.place = place;
+    this.mode = mode;
 
     this.pessoa = pessoa;
     this.odonto = odonto;

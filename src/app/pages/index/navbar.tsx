@@ -18,13 +18,20 @@ export default function NavBar(){
   const { theme } = useTheme();
   const [selectedPlace, setSelectedPlace] = React.useState("Goiânia");
 
-  function lugarChangeHandler(place: string){
-    setSelectedPlace(place); //TODO MORE
+  function lugarChangeHandler(place: string, key: string){
+    setSelectedPlace(place);
+    alert(Number(key));
   }
 
   function pessoaChangeHandler(doc: Document){
     const p = doc.getElementById("pessoa")!;
+
     const o = doc.getElementById("odonto")!;
+    const ol = doc.getElementById("odontolabel")!;
+
+    const m = doc.getElementById("mode")!;
+    const ml = doc.getElementById("modelabel")!;
+
 
     //Replay animation
     p.style.animationName = "none";
@@ -38,17 +45,38 @@ export default function NavBar(){
 
       if(thisSession.pessoa === 0){
         p.textContent = "Jurídica";
+
         o.style.transform = "translateX(-90px)";
         o.style.opacity = '0';
         o.style.visibility = 'hidden';
+
+        ol.style.transform = "translateX(-90px)";
+        ol.style.opacity = '0';
+        ol.style.visibility = 'hidden';
+
+        setTimeout(() => {
+          o.style.display = 'none';
+          ol.style.display = 'none';
+        }, 250);
+
         thisSession.pessoa = 1;
       }
       else{
+        o.style.display = 'flex';
+        ol.style.display = 'flex';
         p.textContent = "Física";
-        o.style.transform = "translateX(0)";
-        o.style.opacity = '1';
-        o.style.visibility = 'visible';
+
+        setTimeout(() => {
+          o.style.transform = "translateX(0)";
+          o.style.opacity = '1';
+          o.style.visibility = 'visible';
+
+          ol.style.transform = "translate(0px, -22px)";
+          ol.style.opacity = '1';
+          ol.style.visibility = 'visible';
+
         thisSession.pessoa = 0;
+        }, 100);
       }
     }
   }
@@ -77,6 +105,30 @@ export default function NavBar(){
     }
   }
 
+  function modeChangeHandler(doc: Document){
+    const p = doc.getElementById("mode")!;
+
+    //Replay animation
+    p.style.animationName = "none";
+    p.offsetHeight;
+    p.style.animationName = "";
+    p.style.animationName = "flipCard";
+    p.style.animationPlayState = "paused";
+    
+    if(p.style.animationPlayState !== "running"){
+      p.style.animationPlayState = "running";
+
+      if(thisSession.mode === 0){
+        p.textContent = "Auto";
+        thisSession.mode = 1;
+      }
+      else{
+        p.textContent = "Clássico";
+        thisSession.mode = 0;
+      }
+    }
+  }
+
     return(
         <nav className='mt-6'>
             <li>
@@ -88,7 +140,7 @@ export default function NavBar(){
                   <DropdownMenu items={places}>
                       <DropdownSection>
                           {places.map((place) => (
-                              <DropdownItem key={place.key} color="secondary" onPress={() => lugarChangeHandler(place.label)}>{place.label}</DropdownItem>
+                              <DropdownItem key={place.key} color="secondary" onPress={() => lugarChangeHandler(place.label, place.key)}>{place.label}</DropdownItem>
                           ))}
                       </DropdownSection>
                   </DropdownMenu>
@@ -99,8 +151,12 @@ export default function NavBar(){
               <Button id="pessoa" color="secondary" className="text-lg w-px" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
             </li>
             <li>
-              <label className="label">Odonto:</label>
+              <label id="odontolabel" className="label">Odonto:</label>
               <Button id="odonto" color="secondary" className="text-lg" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
+            </li>
+            <li>
+              <label id="modelabel" className="label">Modo:</label>
+              <Button id="mode" color="secondary" className="text-lg w-px" onPress={()=> modeChangeHandler(document)}>Clássico</Button>
             </li>
         </nav>
     );

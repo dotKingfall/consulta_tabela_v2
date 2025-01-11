@@ -1,13 +1,14 @@
 
 li{
-  display: inline;
+  list-style-type: none;
+  float: inline-start;
   margin-right: 10px;
 
   font-weight: 400;
   color: hsl(var(--nextui-primary));
 }
 
-#pessoa, #odonto{
+#pessoa, #odonto, #mode{
   animation-name: flipCard;
   animation-play-state: paused;
   animation-timing-function: ease-out;
@@ -17,8 +18,8 @@ li{
   animation-fill-mode: alternate;
 }
 
-#odonto{
-  transition-property: transform, opacity, visibility;
+#odonto, #odontolabel{
+  transition-property: transform, opacity, visibility, display;
   transition-duration: .2s;
   transition-timing-function: linear;
 }
@@ -34,17 +35,17 @@ li{
 
 @keyframes flipCard {
   0%{
-    transform: RotateY(0deg);
+    rotate: y 0deg;
     color: #f5f5dc;
   }
   15%{
     color:transparent
   }
   50%{
-    transform: RotateY(180deg);
+    rotate: y 180deg;
   }
   100%{
-    transform: RotateY(360deg);
+    rotate: y 360deg;
     color: #f5f5dc;
   }
 }

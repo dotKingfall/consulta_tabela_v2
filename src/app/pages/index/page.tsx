@@ -2,9 +2,10 @@ import { IBM_Plex_Sans } from 'next/font/google'
 import './styling/titlebar.css'
 import TitleBar from './titlebar';
 import NavBar from './navbar';
+import NumInput from './numInput';
 import { Session } from './sessionClasses';
 
-export var thisSession = new Session(0, 0, 0, 0, 0);
+export var thisSession = new Session(0, 0, 0, 0, 0, 0);
 
 const titleFont = IBM_Plex_Sans({
     subsets: ['latin'],
@@ -23,7 +24,9 @@ export default function Index(){
                 `}</style>
             <TitleBar></TitleBar>
             <NavBar></NavBar>
-            <main>TODO MAIN</main>
+            <main>
+                <NumInput></NumInput>
+            </main>
             <footer>TODO FOOTER</footer>
         </div>
     );
