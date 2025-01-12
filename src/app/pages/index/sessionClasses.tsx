@@ -6,7 +6,8 @@ export class Session{
   pessoa: number; //0: Física, 1: Jurídica
   odonto: number; //0: Sim, 1: Não
 
-  desconto: number;
+  desconto: number; //0: Não, 1: Sim
+  descontoValue: number;
   total: number;
 
   constructor(
@@ -15,6 +16,7 @@ export class Session{
     pessoa: number,
     odonto: number,
     desconto: number,
+    descontoValue: number,
     total: number
   ){
     this.place = place;
@@ -24,6 +26,7 @@ export class Session{
     this.odonto = odonto;
 
     this.desconto = desconto;
+    this.descontoValue = descontoValue;
     this.total = total;
   }
 }

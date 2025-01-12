@@ -3,45 +3,46 @@
 import {extendVariants, Input} from "@nextui-org/react";
 import './styling/numInput.css';
 
-const CustomInput = extendVariants(Input, {
-  variants: { // <- modify/add variants
+//TODO DARKINPUT
+//TODO LIGHTINPUT
+
+export default function NumInput() {
+  return (
+    <div>
+      <div id="darkInput" className="w-full pt-3 px-5 flex">
+        <DarkInput className="float-start mr-2" label="Insira as idades" type="number" placeholder="Digite as idades separadas por espaço"></DarkInput>
+        <DarkInput className="max-w-40" label="Desconto (%:)" type="number" placeholder="Insira o valor" id="d1"></DarkInput>
+      </div>
+      <div id="lightInput" className="w-full pt-3 px-5 flex">
+        <LightInput className="float-start mr-2" label="Insira as idades" type="number" placeholder="Digite as idades separadas por espaço"></LightInput>
+        <LightInput className="max-w-40" label="Desconto (%:)" type="number" placeholder="Insira o valor" id="d2"></LightInput>
+      </div>
+    </div>
+  );
+}
+
+const DarkInput = extendVariants(Input, {
+  variants: {
     color: {
       default:{
+        inputWrapper:[
+          //global
+          "border",
+          "transition-colors",
+          "dark:bg-darkergreen",
 
+          //outer shell dark mode
+          'dark:border-darkergreen',
+          'dark:data-[hover=true]:border-lightergreen',
+          'dark:data-[hover=true]:bg-darkergreen',
+
+          'dark:group-data-[focus=true]:border-lightergreen',
+          'dark:group-data-[focus=true]:bg-darkergreen',
+        ],
+        input:[
+          "inputColor",
+        ],
       }
-    },
-    size: {
-      xs: {
-        inputWrapper: "h-6 min-h-6 px-1",
-        input: "text-tiny",
-      },
-      md: {
-        inputWrapper: "h-10 min-h-10",
-        input: "text-small",
-      },
-      xl: {
-        inputWrapper: "h-14 min-h-14",
-        input: "text-medium",
-      },
-    },
-    radius: {
-      xs: {
-        inputWrapper: "rounded",
-      },
-      sm: {
-        inputWrapper: "rounded-[4px]",
-      },
-    },
-    textSize: {
-      base: {
-        input: "text-base",
-      },
-    },
-    removeLabel: {
-      true: {
-        label: "hidden",
-      },
-      false: {},
     },
   },
   defaultVariants: {
@@ -51,11 +52,33 @@ const CustomInput = extendVariants(Input, {
   },
 });
 
-export default function NumInput() {
-  return (
-    <div className="w-full pt-3 px-5 flex">
-      <Input className="float-start mr-2" label="Insira as idades" placeholder="Digite as idades separadas por espaço"></Input>
-      <CustomInput className="max-w-40" label="Desconto (%:)" placeholder="Insira o valor"></CustomInput>
-    </div>
-  );
-}
+const LightInput = extendVariants(Input, {
+  variants: {
+    color: {
+      default:{
+        inputWrapper:[
+          //global
+          "border",
+          "transition-colors",
+          "bg-lightgreen",
+
+          //outer shell dark mode
+          'border-lightgreen',
+          'data-[hover=true]:border-maingreen',
+          'data-[hover=true]:bg-lightgreen',
+
+          'group-data-[focus=true]:border-maingreen',
+          'group-data-[focus=true]:bg-lightgreen',
+        ],
+        input:[
+          "inputColor",
+        ],
+      }
+    },
+  },
+  defaultVariants: {
+    color: "default",
+    textSize: "base",
+    removeLabel: false,
+  },
+});

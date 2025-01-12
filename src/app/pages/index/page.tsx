@@ -4,8 +4,9 @@ import TitleBar from './titlebar';
 import NavBar from './navbar';
 import NumInput from './numInput';
 import { Session } from './sessionClasses';
+import NumLabels  from './numLabels';
 
-export var thisSession = new Session(0, 0, 0, 0, 0, 0);
+export var thisSession = new Session(0, 0, 0, 0, 0, 0, 0);
 
 const titleFont = IBM_Plex_Sans({
     subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function Index(){
             <NavBar></NavBar>
             <main>
                 <NumInput></NumInput>
+                <NumLabels></NumLabels>
             </main>
             <footer>TODO FOOTER</footer>
         </div>

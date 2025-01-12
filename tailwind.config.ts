@@ -14,9 +14,13 @@ module.exports = {
       colors:{
         'lightergreen': '#20d5a5',
         'darkergreen': '#000d0d',
-        'darktext': '#757575',
+        'darkertext': '#c7c7c7',
+
+        'maingreen': '#223e27',
+        'lightgreen': '#c7e1c7',
+
         'currentTextColor': 'hsl(var(--nextui-secondary-foreground))',
-        'insideTextColor': 'hsl(var(--nextui-primary-foreground))'
+        'insideTextColor': 'hsl(var(--nextui-primary-foreground))',
       }
     }
   },
@@ -34,10 +38,6 @@ module.exports = {
               DEFAULT: '#214039',
               foreground:'#c7c7c7',
             },
-            success:{
-              DEFAULT: '#000d0d',
-              foreground: '#20d5a5',
-            },
             focus: '#20d5a5',
             background:'#040406'
           },
@@ -51,10 +51,6 @@ module.exports = {
             },
             secondary:{
               DEFAULT: '#386c5f',
-              foreground: '#223e27',
-            },
-            success:{
-              DEFAULT: '#c7e1c7',
               foreground: '#223e27',
             },
             focus: '#223e27',
