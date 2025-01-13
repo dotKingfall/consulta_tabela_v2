@@ -4,11 +4,16 @@
 
 :root{
   --dark-text: #c7c7c7;
+  --dark-bg: #000d0d;
+  --dark-highlight: #20d5a5;
+
   --light-text: #223e27;
+  --light-bg: #c7e1c7;
+  --light-highlight: #223e27;
 }
 
 [data-theme="light"]{
-  background: linear-gradient(#a2cea2 5%, #485B48) no-repeat;
+  background: linear-gradient(#a2cea2 5%, #485B48);
   background-attachment: fixed;
 }
 
