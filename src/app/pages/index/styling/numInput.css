@@ -6,22 +6,6 @@
   color: var(--dark-text) !important;
 }
 
-[data-theme = 'dark'] #darkInput{
-  display: flex;
-}
-
-[data-theme = 'light'] #darkInput{
-  display: none;
-}
-
-[data-theme = 'dark'] #lightInput{
-  display: none;
-}
-
-[data-theme = 'light'] #lightkInput{
-  display: flex;
-}
-
 Input[type="number"]::-webkit-inner-spin-button,
 Input[type="number"]::-webkit-outer-spin-button{
   -webkit-appearance: none;
