@@ -1,13 +1,48 @@
-.inputColor{
-  color: var(--light-text) !important;
-}
-
-[data-theme = 'dark'] .inputColor{
-  color: var(--dark-text) !important;
-}
-
-Input[type="number"]::-webkit-inner-spin-button,
-Input[type="number"]::-webkit-outer-spin-button{
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
   -webkit-appearance: none;
   margin: 0;
+}
+
+.txtfield{
+  background-color: var(--light-bg);
+  color: var(--light-text);
+
+  font-size: x-large;
+  border-radius: 15px;
+  border: 2px solid transparent;
+
+  padding: 5px;
+  padding-left: 15px;
+}
+
+.txtfield:focus{
+  outline: 2px solid var(--light-highlight);
+}
+
+[data-theme = 'dark'] .txtfield:focus{
+  outline: 2px solid var(--dark-highlight);
+}
+
+.txtfield:hover{
+  outline: 2px solid var(--light-highlight);
+}
+
+[data-theme = 'dark'] .txtfield:hover{
+  outline: 2px solid var(--dark-highlight);
+}
+
+[data-theme = 'dark'] .txtfield{
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.txtfieldLabel{
+  padding-left: 8px;
+  font-size: .9em;
+  color: var(--light-highlight)
+}
+
+[data-theme = 'dark'] .txtfieldLabel{
+  color: var(--dark-highlight)
 }

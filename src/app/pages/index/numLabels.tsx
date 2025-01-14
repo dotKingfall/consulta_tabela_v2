@@ -5,9 +5,9 @@ import './styling/numLabels.css'
 
 export default function NumLabels(){
   return(
-    <div className="w-full pt-1 px-5 flex">
+    <div className="pt-1 px-5 flex">
       <div className="totallabel w-full text-end pr-4 text-currentTextColor">TOTAL PESSOAS: 0</div>
-      <div onClick={()=> makeDiscountEditable(document)} className="descontolabel min-w-40 text-end text-currentTextColor" id='dlabel'>{thisSession.desconto === 0 ? 'APLICAR' : 'CANCELAR'}</div>
+      <div onClick={()=> makeDiscountEditable(document)} className="descontolabel text-end text-currentTextColor" id='dlabel'>{thisSession.desconto === 0 ? 'APLICAR' : 'CANCELAR'}</div>
     </div>
   );
 }

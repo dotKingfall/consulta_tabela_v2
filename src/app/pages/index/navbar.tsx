@@ -14,6 +14,11 @@ import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { thisSession } from "./page";
 
+//what defines docpath
+export let odonto = 'o';
+export let lugar = 'go';
+export let pessoa = 'ind';
+
 export default function NavBar(){
   const { theme } = useTheme();
   const [selectedPlace, setSelectedPlace] = React.useState("Goiânia");
@@ -21,6 +26,22 @@ export default function NavBar(){
   function lugarChangeHandler(place: string, key: string){
     setSelectedPlace(place);
     thisSession.place = parseInt(key);
+
+    switch(key){
+      case '0':
+        lugar = 'go_';
+        break;
+      case '1':
+        lugar = 'an_';
+        break;
+      case '2':
+        lugar = 'br_';
+        break;
+
+      default:
+        break;
+    }
+
   }
 
   function pessoaChangeHandler(doc: Document){
@@ -45,6 +66,7 @@ export default function NavBar(){
 
       if(thisSession.pessoa === 0){
         p.textContent = "Jurídica";
+        pessoa = 'emp';
 
         o.style.transform = "translateX(-90px)";
         o.style.opacity = '0';
@@ -65,6 +87,7 @@ export default function NavBar(){
         o.style.display = 'flex';
         ol.style.display = 'flex';
         p.textContent = "Física";
+        pessoa = 'ind';
 
         setTimeout(() => {
           o.style.transform = "translateX(0)";
@@ -96,10 +119,12 @@ export default function NavBar(){
 
       if(thisSession.odonto === 0){
         p.textContent = "Não";
+        odonto = 's_';
         thisSession.odonto = 1;
       }
       else{
         p.textContent = "Sim";
+        odonto = 'o_';
         thisSession.odonto = 0;
       }
     }

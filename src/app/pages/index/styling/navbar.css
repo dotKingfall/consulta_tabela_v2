@@ -32,7 +32,7 @@ li:last-child{
 }
 
 .label{
-  position: fixed;
+  position: absolute;
 
   padding-left: 5px;
   transform: translateY(-22px);
