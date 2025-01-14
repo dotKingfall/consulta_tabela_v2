@@ -46,3 +46,23 @@ input[type="number"]::-webkit-outer-spin-button{
 [data-theme = 'dark'] .txtfieldLabel{
   color: var(--dark-highlight)
 }
+
+.descontolabel{
+  font-size: .7em;
+  cursor: pointer;
+  user-select: none;
+
+  margin-right: 9px;
+  display: block;
+  text-align: right;
+  padding-top: 2px;
+}
+
+.totallabel{
+  font-size: .7em;
+  display: block;
+  text-align: right;
+
+  padding-top: 2px;
+  padding-right: 10px;
+}
