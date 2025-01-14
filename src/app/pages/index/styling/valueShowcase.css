@@ -21,7 +21,7 @@
   color: var(--light-text);
 
   border-radius: 25px;
-  border: 2px solid transparent;
+  border: 2px solid rgba(37,74,44,.3);
 
   padding-left: 15px;
   padding-right: 15px;
@@ -33,6 +33,7 @@
 [data-theme = 'dark'] .valuefield{
   background: var(--dark-bg);
   color: var(--dark-text);
+  border: 2px solid transparent;
 }
 
 .valuefield:hover{

@@ -19,7 +19,7 @@ export default function TitleBar(){
       </Button>
 
       <div className='title'>VALORES</div>
-      <div className="subtitle">Atualizado por último: 02/01/2025 às 15h</div>
+      <div className="subtitle">Atualizado por último: 13/01/2025 às 23h</div>
       <hr className="divider-light"></hr>
     </header>
   );
