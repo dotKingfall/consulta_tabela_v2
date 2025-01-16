@@ -5,6 +5,7 @@ import {
   opanind, otanind, spanind, stanind, spanemp, stanemp,
   opbrind, otbrind, spbrind, stbrind, spbremp, stbremp
 } from '../page';
+import printResults from "./printResults";
 
 let pParcial: Pessoa[] = [];
 let pTotal: Pessoa[] = [];
@@ -71,8 +72,9 @@ export function classicMode(doc: Document){
 
   addPartial();
   addTotal();
+  doc.getElementById('pCount')!.innerText = pParcial.length.toString();
 
-  console.log(pParcial, pTotal);
+  printResults(doc, pParcial, pTotal);
 
   function addPartial(){
     idades.forEach((item)=>{
@@ -156,4 +158,3 @@ export function classicMode(doc: Document){
     
   }
 }
-

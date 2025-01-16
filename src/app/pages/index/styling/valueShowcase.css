@@ -25,6 +25,7 @@
 
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 10px;
 
   cursor: pointer;
   min-height: 60vh;
@@ -78,4 +79,12 @@
 
 [data-theme = 'dark'] #ap1, [data-theme = 'dark'] #ap2, [data-theme = 'dark'] #en1, [data-theme = 'dark'] #en2, [data-theme = 'dark'] #am1, [data-theme = 'dark'] #am2{
   color: var(--dark-text);
+}
+
+.copyanim{
+  transition: transform .5s;
+}
+
+.copyanim:hover{
+  transform: rotate(360deg);
 }

@@ -5,6 +5,6 @@ import {
   opbrind, otbrind, spbrind, stbrind, spbremp, stbremp
 } from '../page';
 
-export function autooMode(doc: Document){
+export function autoMode(doc: Document){
   const txtField = doc.getElementById('c1') as HTMLInputElement;
 }

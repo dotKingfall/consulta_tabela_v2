@@ -5,6 +5,7 @@ import NavBar from './navbar';
 import NumInput from './numInput';
 import { Session } from './sessionClasses';
 import ValueShowcase from './valueShowcase';
+import Footer from './footer';
 
 //Goiania Ind and Emp
 import opgoind from '../../../json/o_p_go_ind.json';
@@ -29,7 +30,6 @@ import spbrind from '../../../json/s_p_br_ind.json';
 import stbrind from '../../../json/s_t_br_ind.json';
 import spbremp from '../../../json/s_p_br_emp.json';
 import stbremp from '../../../json/s_t_br_emp.json';
-
 
 export {
     opgoind, otgoind, spgoind, stgoind, spgoemp, stgoemp,
@@ -60,7 +60,7 @@ export default function Index(){
                 <NumInput></NumInput>
                 <ValueShowcase></ValueShowcase>
             </main>
-            <footer>TODO FOOTER</footer>
+            <Footer></Footer>
         </div>
     );
 }

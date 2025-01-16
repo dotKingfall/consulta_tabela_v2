@@ -1,0 +1,41 @@
+
+.githubSection{
+  background-color: transparent;
+  color: hsl(var(--nextui-primary-foreground));
+
+  min-height: 10%;
+  width: 100%;
+}
+
+[data-theme ='dark'] .githubSection{
+  color: var(--dark-text);
+}
+
+.myGithub{
+  padding-left: 10px;
+  padding-top: 15px;
+  cursor: pointer;
+  max-width: 11%;
+}
+
+
+[data-theme = 'dark'] .footervdivider{
+  border: 3px solid var(--dark-highlight);
+}
+
+.referralsSection{
+  color: var(--light-secondary-text);
+  padding-top: 2vh;
+}
+
+[data-theme = 'dark'] .referralsSection{
+  color: var(--dark-highlight);
+}
+
+.githubborder{
+  border-right: 5px solid var(--light-bg);
+}
+
+[data-theme = 'dark'] .githubborder{
+  border-right: 5px solid var(--dark-highlight);
+}

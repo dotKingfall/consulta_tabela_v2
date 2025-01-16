@@ -8,8 +8,9 @@
   --dark-highlight: #20d5a5;
 
   --light-text: #223e27;
+  --light-secondary-text: #f5f5dc;
   --light-bg: #c7e1c7;
-  --light-highlight: #223e27;
+  --light-highlight: #214039;
 }
 
 [data-theme="light"]{

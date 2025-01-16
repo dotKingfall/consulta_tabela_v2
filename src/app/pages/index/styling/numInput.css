@@ -49,7 +49,6 @@ input[type="number"]::-webkit-outer-spin-button{
 
 .descontolabel{
   font-size: .7em;
-  cursor: pointer;
   user-select: none;
 
   margin-right: 9px;
@@ -65,4 +64,21 @@ input[type="number"]::-webkit-outer-spin-button{
 
   padding-top: 2px;
   padding-right: 10px;
+}
+
+input:disabled{
+  opacity: .4;
+}
+
+input:disabled:hover{
+  outline: none;
+}
+
+[data-theme = 'dark'] input:disabled:hover{
+  outline: none;
+}
+
+#dlabel{
+  cursor: pointer;
+  margin-left: 80%;
 }
