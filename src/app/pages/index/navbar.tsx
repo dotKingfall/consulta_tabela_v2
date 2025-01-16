@@ -13,7 +13,7 @@ import './styling/navbar.css';
 import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { thisSession } from "./page";
-import { classicMode, pParcial, pTotal } from "./logic/classicmode";
+import { classicMode } from "./logic/classicmode";
 
 export default function NavBar(){
   const { theme } = useTheme();
@@ -32,13 +32,13 @@ export default function NavBar(){
     const o = doc.getElementById("odonto")!;
     const ol = doc.getElementById("odontolabel")!;
 
-    const m = doc.getElementById("mode")!;
-    const ml = doc.getElementById("modelabel")!;
+    //const m = doc.getElementById("mode")!; TODO
+    //const ml = doc.getElementById("modelabel")!; TODO
 
 
     //Replay animation
     p.style.animationName = "none";
-    p.offsetHeight;
+    p.offsetHeight; // eslint-disable-line @typescript-eslint/no-unused-expressions
     p.style.animationName = "";
     p.style.animationName = "flipCard";
     p.style.animationPlayState = "paused";
@@ -92,7 +92,7 @@ export default function NavBar(){
 
     //Replay animation
     p.style.animationName = "none";
-    p.offsetHeight;
+    p.offsetHeight; // eslint-disable-line @typescript-eslint/no-unused-expressions
     p.style.animationName = "";
     p.style.animationName = "flipCard";
     p.style.animationPlayState = "paused";
@@ -118,7 +118,7 @@ export default function NavBar(){
 
     //Replay animation
     p.style.animationName = "none";
-    p.offsetHeight;
+    p.offsetHeight; // eslint-disable-line @typescript-eslint/no-unused-expressions
     p.style.animationName = "";
     p.style.animationName = "flipCard";
     p.style.animationPlayState = "paused";

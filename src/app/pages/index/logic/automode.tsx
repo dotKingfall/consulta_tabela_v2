@@ -1,10 +1,4 @@
-import { thisSession } from "../page";
-import { 
-  opgoind, otgoind, spgoind, stgoind, spgoemp, stgoemp,
-  opanind, otanind, spanind, stanind, spanemp, stanemp,
-  opbrind, otbrind, spbrind, stbrind, spbremp, stbremp
-} from '../page';
-
 export function autoMode(doc: Document){
-  const txtField = doc.getElementById('c1') as HTMLInputElement;
+  //const txtField = doc.getElementById('c1') as HTMLInputElement;
+  console.log(doc);
 }

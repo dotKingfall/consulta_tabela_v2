@@ -9,7 +9,9 @@ import printResults from "./printResults";
 
 export let pParcial: Pessoa[] = [];
 export let pTotal: Pessoa[] = [];
-var tmpp: any, tmpt: any;
+
+// eslint-disable-next-line
+let tmpp: any, tmpt: any;
 
 export function classicMode(doc: Document){
   const txtField = doc.getElementById('c1') as HTMLInputElement;
