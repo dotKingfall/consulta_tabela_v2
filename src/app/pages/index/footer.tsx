@@ -1,7 +1,7 @@
 'use client'
 
 import './styling/footer.css'
-import { Github } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 export default function Footer(){
@@ -11,22 +11,36 @@ export default function Footer(){
     <footer>
       <li>
         <div className="githubSection mt-3">
-          <div className='myGithub'>
+          <div className='mySocial'>
             <a rel='author' target='_blank' href='https://github.com/dotKingfall'>
-              <Github className='githubborder' size={70} color={`${theme === 'light' ? 'var(--light-bg)' : 'var(--dark-highlight)'}`}></Github>
+              <Github size={60} color={`${theme === 'light' ? 'var(--light-bg)' : 'var(--dark-highlight)'}`}></Github>
+            </a>
+            <a rel='author' target='_blank' href='https://www.linkedin.com/in/ithalo-gomes'>
+              <Linkedin className='socialborder' size={70} color={`${theme === 'light' ? 'var(--light-bg)' : 'var(--dark-highlight)'}`}></Linkedin>
             </a>
           </div>
         </div>
       </li>
       <li>
         <div className='referralsSection'>
-          INDIVIDUAL:
+          GOIÂNIA:
         </div>
+        <div><a target='_blank' href='/pdf/iGOI.pdf'>Individual</a></div>
+        <div><a target='_blank' href='/pdf/eGOI.pdf'>Empresarial</a></div>
       </li>
       <li>
         <div className='referralsSection'>
-          EMPRESARIAL:
+          ANÁPOLIS:
         </div>
+        <div><a target='_blank' href='/pdf/iANA.pdf'>Individual</a></div>
+        <div><a target='_blank' href='/pdf/eANA.pdf'>Empresarial</a></div>
+      </li>
+      <li>
+        <div className='referralsSection'>
+          BRASÍLIA:
+        </div>
+        <div><a target='_blank' href='/pdf/iBRA.pdf'>Individual</a></div>
+        <div><a target='_blank' href='/pdf/eBRA.pdf'>Empresarial</a></div>
       </li>
     </footer>
   );

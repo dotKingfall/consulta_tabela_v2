@@ -11,9 +11,12 @@
   color: var(--dark-text);
 }
 
-.myGithub{
+.mySocial{
+  display: flex;
+
   padding-left: 10px;
   padding-top: 15px;
+
   cursor: pointer;
   max-width: 11%;
 }
@@ -26,16 +29,35 @@
 .referralsSection{
   color: var(--light-secondary-text);
   padding-top: 2vh;
+  padding-right: 30px;
 }
 
 [data-theme = 'dark'] .referralsSection{
   color: var(--dark-highlight);
 }
 
-.githubborder{
+.socialborder{
   border-right: 5px solid var(--light-bg);
+  padding-right: 10px;
 }
 
-[data-theme = 'dark'] .githubborder{
+[data-theme = 'dark'] .socialborder{
   border-right: 5px solid var(--dark-highlight);
+}
+
+a{
+  cursor: pointer;
+  color: var(--light-secondary-text);
+}
+
+[data-theme = 'dark'] a{
+  color: var(--dark-text);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+[data-theme = 'dark'] a:hover{
+  color: var(--dark-highlight);
 }
