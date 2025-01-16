@@ -60,7 +60,7 @@
   text-align: center;
   font-size: larger;
   font-weight: 500;
-  padding-left: 30px;
+  padding-left: 10vw;
 
   color: var(--light-text);
 }
@@ -107,18 +107,18 @@
   color: var(--dark-text);
 }
 
-::-webkit-scrollbar {
+#customScrollbarDiv ::-webkit-scrollbar {
   width: 22px; /* Width of the scrollbar */
   height: 12px; /* Height of the horizontal scrollbar */
 }
 
-::-webkit-scrollbar-track {
+#customScrollbarDiv ::-webkit-scrollbar-track {
   margin-top: 75px;
   margin-bottom: 75px;
   background: transparent; /* Background of the scrollbar track */
 }
 
-::-webkit-scrollbar-thumb {
+#customScrollbarDiv ::-webkit-scrollbar-thumb {
   background: var(--light-highlight); 
   border-radius: 5px;
   border-right: 8px solid transparent; 
@@ -126,10 +126,20 @@
   background-clip: content-box;
 }
 
-[data-theme = 'dark'] ::-webkit-scrollbar-thumb{
+[data-theme = 'dark']#customScrollbarDiv ::-webkit-scrollbar-thumb{
   background: hsl(var(--nextui-secondary));
   border-radius: 5px;
   border-right: 8px solid transparent; 
   border-left: 5px solid transparent; 
   background-clip: content-box;
+}
+
+
+.shortcutLabel{
+    color: var(--light-highlight);
+    font-size: x-small;
+}
+
+[data-theme = 'dark'] .shortcutLabel{
+    color: var(--dark-highlight);
 }
