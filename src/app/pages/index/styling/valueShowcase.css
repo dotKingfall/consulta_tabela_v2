@@ -29,6 +29,9 @@
 
   cursor: pointer;
   min-height: 60vh;
+  max-height: 60vh;
+
+  overflow-y: scroll;
 }
 
 [data-theme = 'dark'] .valuefield{
@@ -57,6 +60,7 @@
   text-align: center;
   font-size: larger;
   font-weight: 500;
+  padding-left: 30px;
 
   color: var(--light-text);
 }
@@ -67,6 +71,9 @@
 
 .innerTitle{
   color: var(--light-highlight);
+  text-align: center;
+  font-weight: bold;
+  display: none;
 }
 
 [data-theme = 'dark'] .innerTitle{
@@ -75,6 +82,9 @@
 
 #ap1, #ap2, #en1, #en2, #am1, #am2{
   color: var(--light-text);
+  text-align: start;
+  font-weight: 500;
+  padding-bottom: 20px;
 }
 
 [data-theme = 'dark'] #ap1, [data-theme = 'dark'] #ap2, [data-theme = 'dark'] #en1, [data-theme = 'dark'] #en2, [data-theme = 'dark'] #am1, [data-theme = 'dark'] #am2{
@@ -87,4 +97,39 @@
 
 .copyanim:hover{
   transform: rotate(360deg);
+}
+
+.copiedText{
+  color: var(--light-secondary-text);
+}
+
+[data-theme = 'dark'] .copiedText{
+  color: var(--dark-text);
+}
+
+::-webkit-scrollbar {
+  width: 22px; /* Width of the scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  background: transparent; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-highlight); 
+  border-radius: 5px;
+  border-right: 8px solid transparent; 
+  border-left: 5px solid transparent; 
+  background-clip: content-box;
+}
+
+[data-theme = 'dark'] ::-webkit-scrollbar-thumb{
+  background: hsl(var(--nextui-secondary));
+  border-radius: 5px;
+  border-right: 8px solid transparent; 
+  border-left: 5px solid transparent; 
+  background-clip: content-box;
 }

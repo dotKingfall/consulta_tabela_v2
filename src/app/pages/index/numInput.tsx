@@ -7,6 +7,8 @@ import { thisSession } from './page';
 import { X } from 'lucide-react';
 import './styling/numInput.css';
 import { useTheme } from 'next-themes';
+import { pParcial, pTotal } from "./logic/classicmode";
+import printResults from './logic/printResults';
 
 export default function NumInput() {
   const { theme } = useTheme();
@@ -81,17 +83,27 @@ function makeDiscountEditable(doc: Document){
     dfield.removeAttribute('disabled');
     dfield.style.textDecoration = 'none';
     thisSession.desconto = 1;
+
+    printResults(doc, pParcial, pTotal);
   }
   else{
     dlabel.innerText = 'APLICAR';
     dfield.setAttribute('disabled', 'true');
     dfield.style.textDecoration = 'line-through';
     thisSession.desconto = 0;
+
+    printResults(doc, pParcial, pTotal);
   }
 }
 function clearIdades(doc: Document){
   const tmp = doc.getElementById('c1') as HTMLInputElement;
+  const titles = doc.getElementsByClassName('innerTitle');
+
   tmp.value = '';
+  for (let i = 0; i < titles.length; i++) {
+    const title = titles[i] as HTMLElement;
+    title.style.display = 'none';
+  }
 
   doc.getElementById('pCount')!.innerText = '0';
 }

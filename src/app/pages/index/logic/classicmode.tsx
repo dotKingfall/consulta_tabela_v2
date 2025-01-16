@@ -7,8 +7,8 @@ import {
 } from '../page';
 import printResults from "./printResults";
 
-let pParcial: Pessoa[] = [];
-let pTotal: Pessoa[] = [];
+export let pParcial: Pessoa[] = [];
+export let pTotal: Pessoa[] = [];
 var tmpp: any, tmpt: any;
 
 export function classicMode(doc: Document){

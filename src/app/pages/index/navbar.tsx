@@ -13,14 +13,17 @@ import './styling/navbar.css';
 import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { thisSession } from "./page";
+import { classicMode, pParcial, pTotal } from "./logic/classicmode";
 
 export default function NavBar(){
   const { theme } = useTheme();
   const [selectedPlace, setSelectedPlace] = React.useState("Goiânia");
 
-  function lugarChangeHandler(place: string, key: string){
+  function lugarChangeHandler(place: string, key: string, doc: Document){
     setSelectedPlace(place);
+
     thisSession.place = parseInt(key);
+    classicMode(doc);
   }
 
   function pessoaChangeHandler(doc: Document){
@@ -60,6 +63,7 @@ export default function NavBar(){
         }, 250);
 
         thisSession.pessoa = 1;
+        classicMode(doc);
       }
       else{
         o.style.display = 'flex';
@@ -76,8 +80,10 @@ export default function NavBar(){
           ol.style.visibility = 'visible';
 
         thisSession.pessoa = 0;
+        classicMode(doc);
         }, 100);
       }
+
     }
   }
 
@@ -103,6 +109,8 @@ export default function NavBar(){
         thisSession.odonto = 0;
       }
     }
+
+    classicMode(doc);
   }
 
   function modeChangeHandler(doc: Document){
@@ -142,7 +150,7 @@ export default function NavBar(){
                   }}>
                       <DropdownSection>
                           {places.map((place) => (
-                              <DropdownItem key={place.key} color="secondary" onPress={() => lugarChangeHandler(place.label, place.key)}>{place.label}</DropdownItem>
+                              <DropdownItem key={place.key} color="secondary" onPress={() => lugarChangeHandler(place.label, place.key, document)}>{place.label}</DropdownItem>
                           ))}
                       </DropdownSection>
                   </DropdownMenu>

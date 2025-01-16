@@ -1,14 +1,21 @@
 
 export class Session{
-  place: number; //0: Goiânia, 1: Anápolis, 2: Brasília
-  mode: number; //0: classic, 1: auto
+  place: number = 0; //0: Goiânia, 1: Anápolis, 2: Brasília
+  mode: number = 0; //0: classic, 1: auto
 
-  pessoa: number; //0: Física, 1: Jurídica
-  odonto: number; //0: Sim, 1: Não
+  pessoa: number = 0; //0: Física, 1: Jurídica
+  odonto: number = 0; //0: Sim, 1: Não
 
-  desconto: number; //0: Não, 1: Sim
-  descontoValue: number;
-  total: number;
+  desconto: number = 0; //0: Não, 1: Sim
+  descontoValue: number = 0;
+
+  totalAm1: number = 0;
+  totalEn1: number = 0;
+  totalAp1: number = 0;
+
+  totalAm2: number = 0;
+  totalEn2: number = 0;
+  totalAp2: number = 0;
 
   constructor(
     place: number,
@@ -17,7 +24,12 @@ export class Session{
     odonto: number,
     desconto: number,
     descontoValue: number,
-    total: number
+    totalAm1: number,
+    totalEn1: number,
+    totalAp1: number,
+    totalAm2: number,
+    totalEn2: number,
+    totalAp2: number,
   ){
     this.place = place;
     this.mode = mode;
@@ -27,7 +39,14 @@ export class Session{
 
     this.desconto = desconto;
     this.descontoValue = descontoValue;
-    this.total = total;
+
+    this.totalAm1 = totalAm1;
+    this.totalEn1 = totalEn1;
+    this.totalAp1 = totalAp1;
+
+    this.totalAm2 = totalAm2;
+    this.totalEn2 = totalEn2;
+    this.totalAp2 = totalAp2;
   }
 }
 

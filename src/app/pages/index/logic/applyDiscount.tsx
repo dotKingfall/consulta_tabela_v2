@@ -1,4 +1,6 @@
 import { thisSession } from "../page";
+import { pParcial, pTotal } from "./classicmode";
+import printResults from "./printResults";
 
 export default function ApplyDiscount(doc: Document){
   const dfield = doc.getElementById('c2') as HTMLInputElement;
@@ -12,4 +14,6 @@ export default function ApplyDiscount(doc: Document){
   else{
     thisSession.descontoValue = parseInt(dfield.value);
   }
+
+  printResults(doc, pParcial, pTotal);
 }
