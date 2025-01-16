@@ -1,7 +1,6 @@
 'use client'
 
 import ApplyDiscount from './logic/applyDiscount';
-import { autoMode } from './logic/automode';
 import { classicMode } from './logic/classicmode';
 import { thisSession } from './page';
 import { X } from 'lucide-react';
@@ -12,6 +11,11 @@ import printResults from './logic/printResults';
 
 export default function NumInput() {
   const { theme } = useTheme();
+
+  function autoMode(value: string){
+    if(thisSession.mode === 0){return value;}
+    return value.replace(/(\d{2})(?=\d)/g, '$1 ');
+  }
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -25,7 +29,8 @@ export default function NumInput() {
   };
 
   const handleInputSpace = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    let value = event.target.value;
+    value = autoMode(value);
     event.target.value = value.replace(/[^0-9\s]/g, ''); // Allow numeric characters and spaces
   };
 
@@ -45,7 +50,7 @@ export default function NumInput() {
             onInput={handleInputSpace}
             onKeyDown={handleKeyDownSpace}
             id="c1"
-            className="txtfield w-full" onChange={()=> thisSession.mode === 0 ? classicMode(document) : autoMode(document)}>
+            className="txtfield w-full" onChange={()=> classicMode(document)}>
           </input>
           <span className='absolute' title='Limpar idades'>
             <X className='mt-3 ml-1 cursor-pointer' color={`${theme === 'light' ? 'var(--light-highlight)' : 'var(--dark-highlight)'}`} onClick={()=> clearIdades(document)}></X>
