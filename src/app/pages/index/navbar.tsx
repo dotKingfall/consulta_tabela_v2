@@ -33,15 +33,15 @@ export default function NavBar(){
     const o = doc.getElementById("odonto")!;
     const ol = doc.getElementById("odontolabel")!;
 
-    //const m = doc.getElementById("mode")!; TODO
-    //const ml = doc.getElementById("modelabel")!; TODO
+    const m = doc.getElementById("mode")!;
+    const ml = doc.getElementById("modelabel")!;
 
 
     //Replay animation
     p.style.animationName = "none";
     p.offsetHeight; // eslint-disable-line @typescript-eslint/no-unused-expressions
     p.style.animationName = "";
-    p.style.animationName = "flipCard";
+    //p.style.animationName = "flipCard";
     p.style.animationPlayState = "paused";
     
     if(p.style.animationPlayState !== "running"){
@@ -86,6 +86,7 @@ export default function NavBar(){
       }
 
     }
+
   }
 
   function odontoChangeHandler(doc: Document){
@@ -172,15 +173,21 @@ export default function NavBar(){
             </li>
             <li>
               <label className="label">Pessoa:</label>
-              <Button size={isSmallScreen ? 'sm' : 'md'} id="pessoa" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
+              <div>
+                <Button id="pessoa" size={isSmallScreen ? 'sm' : 'md'} color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
+              </div>
             </li>
             <li>
               <label id="odontolabel" className="label">Odonto:</label>
-              <Button size={isSmallScreen ? 'sm' : 'md'} id="odonto" color="secondary" className="text-lg text-insideTextColor" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
+              <div>
+                <Button id="odonto" size={isSmallScreen ? 'sm' : 'md'} color="secondary" className="text-lg text-insideTextColor" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
+              </div>
             </li>
             <li>
               <label id="modelabel" className="label">Modo:</label>
-              <Button size={isSmallScreen ? 'sm' : 'md'} id="mode" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> modeChangeHandler(document)}>Padrão</Button>
+              <div>
+                <Button id="mode" size={isSmallScreen ? 'sm' : 'md'} color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> modeChangeHandler(document)}>Padrão</Button>
+              </div>
             </li>
         </nav>
     );

@@ -26,7 +26,7 @@ li:last-child{
 }
 
 #odonto, #odontolabel, #mode, #modelabel{
-  transition-property: transform, opacity, visibility, display;
+  transition-property: rotate, opacity, visibility, display;
   transition-duration: .2s;
   transition-timing-function: linear;
 }
@@ -59,7 +59,7 @@ li:last-child{
 }
 
 /*MOBILE SECTION --------------------------------------------------------------------------------*/
-@media only screen and (max-width: 800) {
+@media only screen and (max-width: 1081) {
   Button{
     font-size: smaller;
   }

@@ -106,17 +106,17 @@ export default function ValueShowcase(){
           </div>
 
           <div id='mainfield1'>
-          <div className='innerTitle' id='md1'>
-              AMBULATORIAL
-              <div id='am1' contentEditable></div>
+            <div className='innerTitle'>
+              APARTAMENTO
+              <div id='ap1' contentEditable></div>
             </div>
             <div className='innerTitle'>
               ENFERMARIA
               <div id='en1' contentEditable></div>
             </div>
-            <div className='innerTitle'>
-              APARTAMENTO
-              <div id='ap1' contentEditable></div>
+            <div className='innerTitle' id='md1'>
+              AMBULATORIAL
+              <div id='am1' contentEditable></div>
             </div>
           </div>
           
@@ -141,17 +141,17 @@ export default function ValueShowcase(){
           </div>
 
           <div id='mainfield2'>
-          <div className='innerTitle' id='md2'>
-              AMBULATORIAL
-              <div id='am2' contentEditable></div>
+            <div className='innerTitle'>
+              APARTAMENTO
+              <div id='ap2' contentEditable></div>
             </div>
             <div className='innerTitle'>
               ENFERMARIA
               <div id='en2' contentEditable></div>
             </div>
-            <div className='innerTitle'>
-              APARTAMENTO
-              <div id='ap2' contentEditable></div>
+            <div className='innerTitle' id='md2'>
+              AMBULATORIAL
+              <div id='am2' contentEditable></div>
             </div>
           </div>
         </div>

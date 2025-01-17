@@ -57,7 +57,7 @@ a:hover{
 }
 
 /*MOBILE SECTION --------------------------------------------------------------------------------*/
-@media only screen and (max-width: 800) {
+@media only screen and (max-width: 1081) {
   a{
     max-width: 75px;
   }
