@@ -15,6 +15,7 @@
 }
 
 .valuefield{
+  width: 100%;
   background: radial-gradient(ellipse at top left, #c7e1c7 50%, transparent),
   radial-gradient(ellipse at bottom, #9fb49f 80%, transparent);
 
@@ -107,6 +108,10 @@
   color: var(--dark-text);
 }
 
+#customScrollbarDiv{
+  display: flex;
+}
+
 #customScrollbarDiv ::-webkit-scrollbar {
   width: 22px; /* Width of the scrollbar */
   height: 12px; /* Height of the horizontal scrollbar */
@@ -134,7 +139,6 @@
   background-clip: content-box;
 }
 
-
 .shortcutLabel{
     color: var(--light-highlight);
     font-size: x-small;
@@ -142,4 +146,30 @@
 
 [data-theme = 'dark'] .shortcutLabel{
     color: var(--dark-highlight);
+}
+
+/*MOBILE SECTION --------------------------------------------------------------------------------*/
+@media only screen and (max-width: 800) {
+  .vdivider{
+    display: none;
+  }
+
+  #customScrollbarDiv{
+    display: initial;
+  }
+
+  .valuefield{
+    width: 90%;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  #title_cp, #title_ct{
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+  
+    color: var(--light-text);
+  }
 }

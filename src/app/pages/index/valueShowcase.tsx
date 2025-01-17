@@ -87,9 +87,9 @@ export default function ValueShowcase(){
   return(
     <div>
       <div className='titlecop'>COPARTICIPAÇÃO</div>
-      <div id='customScrollbarDiv' className='w-full pt-3 px-5 flex'>
+      <div id='customScrollbarDiv' className='pt-3 px-5'>
 
-        <div ref={valueField1Ref} className='w-full float-start valuefield'>
+        <div ref={valueField1Ref} className='float-start valuefield'>
           <div id='title_cp'>
             PARCIAL
             <Popover color='secondary' placement='top' isOpen={showPopover1}>
@@ -124,7 +124,7 @@ export default function ValueShowcase(){
 
         <span className='vdivider mx-2 my-3'></span>
 
-        <div ref={valueField2Ref} className='w-full valuefield'>
+        <div ref={valueField2Ref} className='valuefield'>
           <div id='title_ct'>
             TOTAL
             <Popover color='secondary' placement='top' isOpen={showPopover2}>
