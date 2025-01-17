@@ -149,7 +149,7 @@
 }
 
 /*MOBILE SECTION --------------------------------------------------------------------------------*/
-@media only screen and (max-width: 800) {
+@media (max-width: 1000) {
   .vdivider{
     display: none;
   }
