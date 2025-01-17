@@ -1,21 +1,7 @@
-
-.githubSection{
-  background-color: transparent;
-  color: hsl(var(--nextui-primary-foreground));
-
-  min-height: 10%;
-  width: 100%;
-}
-
-[data-theme ='dark'] .githubSection{
-  color: var(--dark-text);
-}
-
 .mySocial{
   display: flex;
 
   padding-left: 10px;
-  padding-top: 15px;
 
   cursor: pointer;
   max-width: 11%;
@@ -28,8 +14,16 @@
 
 .referralsSection{
   color: var(--light-secondary-text);
-  padding-top: 2vh;
   padding-right: 30px;
+}
+
+.mobileReferralsSection{
+  color: var(--light-secondary-text);
+  padding-right: 10px;
+}
+
+.mobileReferralAll{
+  display: none;
 }
 
 [data-theme = 'dark'] .referralsSection{
@@ -60,4 +54,24 @@ a:hover{
 
 [data-theme = 'dark'] a:hover{
   color: var(--dark-highlight);
+}
+
+/*MOBILE SECTION --------------------------------------------------------------------------------*/
+@media only screen and (max-width: 800) {
+  a{
+    max-width: 75px;
+  }
+
+  .referrallAll{
+    display: none;
+  }
+
+  .mobileReferralAll{
+    display: initial;
+  }
+
+  .referralsSection{
+    font-size: smaller;
+    padding-right: 10px;
+  }
 }
