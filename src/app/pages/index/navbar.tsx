@@ -8,7 +8,7 @@ import {
   DropdownItem
 } from "@nextui-org/dropdown";
 import {Button} from "@nextui-org/button";
-import React from "react";
+import { useEffect, useState } from "react";
 import './styling/navbar.css';
 import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -17,7 +17,8 @@ import { classicMode } from "./logic/classicmode";
 
 export default function NavBar(){
   const { theme } = useTheme();
-  const [selectedPlace, setSelectedPlace] = React.useState("Goiânia");
+  const [selectedPlace, setSelectedPlace] = useState("Goiânia");
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   function lugarChangeHandler(place: string, key: string, doc: Document){
     setSelectedPlace(place);
@@ -131,11 +132,24 @@ export default function NavBar(){
         thisSession.mode = 1;
       }
       else{
-        p.textContent = "Clássico";
+        p.textContent = "Padrão";
         thisSession.mode = 0;
       }
     }
   }
+
+  useEffect(() => {
+      const handleResize = () => {
+        setIsSmallScreen(window.innerWidth < 800);
+      };
+  
+      handleResize(); // Set initial value
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
     return(
         <nav className='mt-6'>
@@ -158,15 +172,15 @@ export default function NavBar(){
             </li>
             <li>
               <label className="label">Pessoa:</label>
-              <Button id="pessoa" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
+              <Button size={isSmallScreen ? 'sm' : 'md'} id="pessoa" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
             </li>
             <li>
               <label id="odontolabel" className="label">Odonto:</label>
-              <Button id="odonto" color="secondary" className="text-lg text-insideTextColor" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
+              <Button size={isSmallScreen ? 'sm' : 'md'} id="odonto" color="secondary" className="text-lg text-insideTextColor" onPress={()=> odontoChangeHandler(document)}>Sim</Button>
             </li>
             <li>
               <label id="modelabel" className="label">Modo:</label>
-              <Button id="mode" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> modeChangeHandler(document)}>Clássico</Button>
+              <Button size={isSmallScreen ? 'sm' : 'md'} id="mode" color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> modeChangeHandler(document)}>Padrão</Button>
             </li>
         </nav>
     );

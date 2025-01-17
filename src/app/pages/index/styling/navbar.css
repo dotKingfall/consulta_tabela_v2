@@ -57,3 +57,10 @@ li:last-child{
     color: insideTextColor;
   }
 }
+
+/*MOBILE SECTION --------------------------------------------------------------------------------*/
+@media only screen and (max-width: 800) {
+  Button{
+    font-size: smaller;
+  }
+}
