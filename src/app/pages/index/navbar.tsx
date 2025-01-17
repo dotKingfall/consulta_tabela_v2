@@ -33,10 +33,6 @@ export default function NavBar(){
     const o = doc.getElementById("odonto")!;
     const ol = doc.getElementById("odontolabel")!;
 
-    const m = doc.getElementById("mode")!;
-    const ml = doc.getElementById("modelabel")!;
-
-
     //Replay animation
     p.style.animationName = "none";
     p.offsetHeight; // eslint-disable-line @typescript-eslint/no-unused-expressions

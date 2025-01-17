@@ -39,6 +39,7 @@ export default function ValueShowcase(){
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === '1') {
+        event.preventDefault();
         // Call the copyValuesText function when Ctrl+C is pressed
         copyValuesText(document, 'mainfield1');
         setShowPopover1(true);
@@ -56,6 +57,7 @@ export default function ValueShowcase(){
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === '2') {
+        event.preventDefault();
         // Call the copyValuesText function when Ctrl+C is pressed
         copyValuesText(document, 'mainfield2');
         setShowPopover2(true);
