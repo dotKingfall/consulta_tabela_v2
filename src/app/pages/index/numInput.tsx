@@ -42,8 +42,8 @@ export default function NumInput() {
 
   return (
     <div>
-      <div className="w-full px-5 flex txtfieldOuterShell">  
-        <div className='w-full mr-14'>
+      <div className="w-full px-5 inputOutline">  
+        <div className='w-full mr-14 inputField'>
           <label className='txtfieldLabel'>IDADES</label>
           <input
             type='text'
@@ -58,7 +58,7 @@ export default function NumInput() {
           </span>
           <label className="totallabel text-currentTextColor">TOTAL PESSOAS: <span id='pCount'>0</span></label>
         </div>
-        <div className='txtfieldOuterShell'>
+        <div className='inputField'>
           <label className='txtfieldLabel'>DESCONTO (%)</label>
           <input 
             type='number'

@@ -16,6 +16,10 @@ input[type="number"]::-webkit-outer-spin-button{
   padding-left: 15px;
 }
 
+.inputOutline{
+  display: flex;
+}
+
 .txtfield:focus{
   outline: 2px solid var(--light-highlight);
 }
@@ -81,4 +85,17 @@ input:disabled:hover{
 #dlabel{
   cursor: pointer;
   margin-left: 80%;
+}
+
+/*MOBILE SECTION --------------------------------------------------------------------------------*/
+@media only screen and (max-width: 800) {
+  .inputOutline{
+    display: initial;
+  }
+
+  .inputField{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
