@@ -73,6 +73,15 @@ export default function ValueShowcase(){
   function copyValuesText(doc: Document, name: string){
     const txt = doc.getElementById(name)!.innerText;
     navigator.clipboard.writeText(txt);
+
+    if(name === 'mainfield1'){
+      setShowPopover1(true);
+      setTimeout(() => setShowPopover1(false), 1500); // Hide the popover after 2 seconds
+    }
+    else{
+      setShowPopover2(true);
+      setTimeout(() => setShowPopover2(false), 1500); // Hide the popover after 2 seconds
+    }
   }
   
   return(

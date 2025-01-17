@@ -47,6 +47,7 @@ export default function NumInput() {
           <label className='txtfieldLabel'>IDADES</label>
           <input
             type='text'
+            inputMode='numeric'
             onInput={handleInputSpace}
             onKeyDown={handleKeyDownSpace}
             id="c1"
