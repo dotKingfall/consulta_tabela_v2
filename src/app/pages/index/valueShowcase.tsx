@@ -112,10 +112,12 @@ export default function ValueShowcase(){
               APARTAMENTO
               <div id='ap1' contentEditable></div>
             </div>
+            <br></br>
             <div className='innerTitle'>
               ENFERMARIA
               <div id='en1' contentEditable></div>
             </div>
+            <br></br>
             <div className='innerTitle' id='md1'>
               AMBULATORIAL
               <div id='am1' contentEditable></div>
@@ -147,10 +149,12 @@ export default function ValueShowcase(){
               APARTAMENTO
               <div id='ap2' contentEditable></div>
             </div>
+            <br></br>
             <div className='innerTitle'>
               ENFERMARIA
               <div id='en2' contentEditable></div>
             </div>
+            <br></br>
             <div className='innerTitle' id='md2'>
               AMBULATORIAL
               <div id='am2' contentEditable></div>
