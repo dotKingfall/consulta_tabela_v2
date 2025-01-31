@@ -1,6 +1,6 @@
 'use client'
 
-import ApplyDiscount from './logic/applyDiscount';
+import ApplyDiscount, { changeDiscountOption } from './logic/applyDiscount';
 import { classicMode } from './logic/classicmode';
 import { thisSession } from './page';
 import { X } from 'lucide-react';
@@ -58,8 +58,13 @@ export default function NumInput() {
           </span>
           <label className="totallabel text-currentTextColor">TOTAL PESSOAS: <span id='pCount'>0</span></label>
         </div>
-        <div className='inputField'>
-          <label className='txtfieldLabel'>DESCONTO (%)</label>
+        <div className='inputField mt-1'>
+          <label className='txtfieldLabel flex'>
+            <div className='mr-auto'>DESCONTO (%)</div>
+            <span id='descontooption' onClick={()=> changeDiscountOption(document)}>
+              {thisSession.descontoOption === 0 ? 'OPT 1' : 'OPT 2'}
+            </span>
+          </label>
           <input 
             type='number'
             onInput={handleInput}

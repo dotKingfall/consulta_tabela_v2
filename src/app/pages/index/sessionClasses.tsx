@@ -7,6 +7,7 @@ export class Session{
   odonto: number = 0; //0: Sim, 1: Não
 
   desconto: number = 0; //0: Não, 1: Sim
+  descontoOption: number  = 0; //0: Não, 1: Sim
   descontoValue: number = 0;
 
   totalAm1: number = 0;
@@ -23,6 +24,7 @@ export class Session{
     pessoa: number,
     odonto: number,
     desconto: number,
+    descontoOption: number,
     descontoValue: number,
     totalAm1: number,
     totalEn1: number,
@@ -38,6 +40,7 @@ export class Session{
     this.odonto = odonto;
 
     this.desconto = desconto;
+    this.descontoOption = descontoOption;
     this.descontoValue = descontoValue;
 
     this.totalAm1 = totalAm1;

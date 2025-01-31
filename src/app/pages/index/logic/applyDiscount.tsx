@@ -17,3 +17,12 @@ export default function ApplyDiscount(doc: Document){
 
   printResults(doc, pParcial, pTotal);
 }
+
+export function changeDiscountOption(doc: Document){
+
+  if(thisSession.descontoOption === 0){thisSession.descontoOption = 1}
+  else{thisSession.descontoOption = 0}
+
+  doc.getElementById('descontooption')!.innerText = `OPT ${thisSession.descontoOption + 1}`
+  printResults(doc, pParcial, pTotal);
+}

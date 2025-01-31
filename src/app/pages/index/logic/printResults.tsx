@@ -31,8 +31,9 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
 
   const descontoMultiplier = Number(thisSession.descontoValue) / 100;
   let desconto = (1 - descontoMultiplier).toPrecision(3);
+  let descontoOpt2 = desconto;
 
-  if(thisSession.desconto === 0){desconto = '1';}
+  if(thisSession.desconto === 0 || thisSession.descontoOption === 1){desconto = '1';}
 
   thisSession.totalAp1 = 0;
   thisSession.totalEn1 = 0;
@@ -87,6 +88,16 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
       ap2.innerText = `${ap2S}\r\nTotal: ${real.format(thisSession.totalAp2)}`;
       en2.innerText = `${en2S}\r\nTotal: ${real.format(thisSession.totalEn2)}`;
       am2.innerText = `${am2S}\r\nTotal: ${real.format(thisSession.totalAm2)}`;
+
+      if(thisSession.descontoOption === 1){
+        ap1.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAp1 * Number(descontoOpt2))}`
+        en1.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalEn1 * Number(descontoOpt2))}`
+        am1.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAm1 * Number(descontoOpt2))}`
+
+        ap2.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAp2 * Number(descontoOpt2))}`
+        en2.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalEn2 * Number(descontoOpt2))}`
+        am2.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAm2 * Number(descontoOpt2))}`
+      }
     }
     else{
       ap1.innerText = `${ap1S}`;
@@ -108,6 +119,14 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
   
       ap2.innerText = `${ap2S}\r\nTotal: ${real.format(thisSession.totalAp2)}`;
       en2.innerText = `${en2S}\r\nTotal: ${real.format(thisSession.totalEn2)}`;
+
+      if(thisSession.descontoOption === 1){
+        ap1.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAp1 * Number(descontoOpt2))}`
+        en1.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalEn1 * Number(descontoOpt2))}`
+
+        ap2.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAp2 * Number(descontoOpt2))}`
+        en2.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalEn2 * Number(descontoOpt2))}`
+      }
     }
     else{
       ap1.innerText = `${ap1S}`;

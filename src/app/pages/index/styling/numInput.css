@@ -61,6 +61,12 @@ input[type="number"]::-webkit-outer-spin-button{
   padding-top: 2px;
 }
 
+#descontooption{
+  user-select: none;
+  margin-right: 9px;
+  cursor: pointer;
+}
+
 .totallabel{
   font-size: .7em;
   display: block;
