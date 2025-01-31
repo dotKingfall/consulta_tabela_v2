@@ -31,7 +31,7 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
 
   const descontoMultiplier = Number(thisSession.descontoValue) / 100;
   let desconto = (1 - descontoMultiplier).toPrecision(3);
-  let descontoOpt2 = desconto;
+  const descontoOpt2 = desconto;
 
   if(thisSession.desconto === 0 || thisSession.descontoOption === 1){desconto = '1';}
 
