@@ -52,7 +52,7 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
     ap1S += `${idade} anos: ${real.format(tmp1)}\r\n`;
     en1S += `${idade} anos: ${real.format(tmp2)}\r\n`;
 
-    if(thisSession.pessoa == 0 || thisSession.place == 2){
+    if(thisSession.pessoa === 0 || thisSession.place === 2){
       am1S += `${idade} anos: ${real.format(tmp3)}\r\n`;
     }
 
@@ -70,7 +70,7 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
     ap2S += `${idade} anos: ${real.format(tmp1)}\r\n`;
     en2S += `${idade} anos: ${real.format(tmp2)}\r\n`;
 
-    if(thisSession.pessoa == 0 || thisSession.place == 2){
+    if(thisSession.pessoa === 0 || thisSession.place === 2){
       am2S += `${idade} anos: ${real.format(tmp3)}\r\n`;
     }
 
@@ -109,7 +109,7 @@ export default function printResults(doc: Document, p1: Pessoa[], p2: Pessoa[]){
       am2.innerText += `\r\nTotal com desconto da promoção atual: ${real.format(thisSession.totalAm2 * Number(descontoOpt2))}`
     }
   }
-  else if(thisSession.place !== 2 && thisSession.pessoa === 1){
+  else if(thisSession.place !== 2 && thisSession.pessoa !== 0){
     doc.getElementById('md1')!.style.display = 'none';
     doc.getElementById('md2')!.style.display = 'none';
 

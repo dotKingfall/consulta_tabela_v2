@@ -25,6 +25,10 @@ export default function NavBar(){
     setSelectedPlace(place);
 
     thisSession.place = parseInt(key);
+    if(thisSession.place === 2 && thisSession.pessoa === 2){
+      thisSession.pessoa = 0;
+      setSelectedPessoa("Física");
+    }
     classicMode(doc);
   }
 
@@ -162,7 +166,7 @@ export default function NavBar(){
                   }}>
                   <DropdownSection>
                     {pessoas.map((pessoa) => (
-                      <DropdownItem key={pessoa.key} color="secondary" onPress={() => {pessoaChangeHandler(pessoa.label, pessoa.key, document)}}>{pessoa.label}</DropdownItem>
+                      thisSession.place === 2 && pessoa.key === '2' ? null : <DropdownItem key={pessoa.key} color="secondary" onPress={() => {pessoaChangeHandler(pessoa.label, pessoa.key, document)}}>{pessoa.label}</DropdownItem>
                     ))}
                   </DropdownSection>
                 </DropdownMenu>

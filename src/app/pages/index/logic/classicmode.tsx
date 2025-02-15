@@ -3,7 +3,9 @@ import { Pessoa } from "../sessionClasses";
 import { 
   opgoind, otgoind, spgoind, stgoind, spgoemp, stgoemp,
   opanind, otanind, spanind, stanind, spanemp, stanemp,
-  opbrind, otbrind, spbrind, stbrind, spbremp, stbremp
+  opbrind, otbrind, spbrind, stbrind, spbremp, stbremp,
+  opgocol, otgocol, spgocol, stgocol, opancol, otancol,
+  spancol, stancol
 } from '../page';
 import printResults from "./printResults";
 
@@ -23,7 +25,7 @@ export function classicMode(doc: Document){
   const pessoa = thisSession.pessoa;
   const odonto = thisSession.odonto;
 
-  if(place === 0){
+  if(place === 0){ //Goiânia
     if(pessoa === 0){
       if(odonto === 0){
         tmpp = opgoind;
@@ -38,8 +40,18 @@ export function classicMode(doc: Document){
       tmpp = spgoemp;
       tmpt = stgoemp;
     }
+    else if(pessoa === 2){
+      if(odonto === 0){
+        tmpp = opgocol;
+        tmpt = otgocol;
+      }
+      else if(odonto === 1){
+        tmpp = spgocol;
+        tmpt = stgocol;
+      }
+    }
   }
-  else if(place === 1){
+  else if(place === 1){ //Anapolis
     if(pessoa === 0){
       if(odonto === 0){
         tmpp = opanind;
@@ -54,8 +66,18 @@ export function classicMode(doc: Document){
       tmpp = spanemp;
       tmpt = stanemp;
     }
+    else if(pessoa === 2){
+      if(odonto === 0){
+        tmpp = opancol;
+        tmpt = otancol;
+      }
+      else if(odonto === 1){
+        tmpp = spancol;
+        tmpt = stancol;
+      }
+    }
   }
-  else if(place === 2){
+  else if(place === 2){ //Brasilia
     if(pessoa === 0){
       if(odonto === 0){
         tmpp = opbrind;

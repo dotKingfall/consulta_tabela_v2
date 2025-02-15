@@ -31,10 +31,24 @@ import stbrind from '../../../json/s_t_br_ind.json';
 import spbremp from '../../../json/s_p_br_emp.json';
 import stbremp from '../../../json/s_t_br_emp.json';
 
+//Goiania Col
+import opgocol from '../../../json/o_p_go_col.json';
+import otgocol from '../../../json/o_t_go_col.json';
+import spgocol from '../../../json/s_p_go_col.json';
+import stgocol from '../../../json/s_t_go_col.json';
+
+//Anapolis Col
+import opancol from '../../../json/o_p_an_col.json';
+import otancol from '../../../json/o_t_an_col.json';
+import spancol from '../../../json/s_p_an_col.json';
+import stancol from '../../../json/s_t_an_col.json';
+
 export {
     opgoind, otgoind, spgoind, stgoind, spgoemp, stgoemp,
     opanind, otanind, spanind, stanind, spanemp, stanemp,
-    opbrind, otbrind, spbrind, stbrind, spbremp, stbremp
+    opbrind, otbrind, spbrind, stbrind, spbremp, stbremp,
+    opgocol, otgocol, spgocol, stgocol, opancol, otancol,
+    spancol, stancol
 };
 
 export const thisSession = new Session(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
