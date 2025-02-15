@@ -3,7 +3,7 @@ export class Session{
   place: number = 0; //0: Goiânia, 1: Anápolis, 2: Brasília
   mode: number = 0; //0: classic, 1: auto
 
-  pessoa: number = 0; //0: Física, 1: Jurídica
+  pessoa: number = 0; //0: Física, 1: Jurídica, 2: Coletivo por adesão
   odonto: number = 0; //0: Sim, 1: Não
 
   desconto: number = 0; //0: Não, 1: Sim

@@ -15,7 +15,8 @@ li:last-child{
   float: none;
 }
 
-#pessoa, #odonto, #mode{
+
+#odonto, #mode{
   animation-name: flipCard;
   animation-play-state: paused;
   animation-timing-function: ease-out;

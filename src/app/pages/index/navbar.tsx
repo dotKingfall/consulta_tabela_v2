@@ -18,6 +18,7 @@ import { classicMode } from "./logic/classicmode";
 export default function NavBar(){
   const { theme } = useTheme();
   const [selectedPlace, setSelectedPlace] = useState("Goiânia");
+  const [selectedPessoa, setSelectedPessoa] = useState("Física");
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   function lugarChangeHandler(place: string, key: string, doc: Document){
@@ -27,62 +28,45 @@ export default function NavBar(){
     classicMode(doc);
   }
 
-  function pessoaChangeHandler(doc: Document){
-    const p = doc.getElementById("pessoa")!;
-
+  function pessoaChangeHandler(pessoa: string, key: string, doc: Document){
     const o = doc.getElementById("odonto")!;
     const ol = doc.getElementById("odontolabel")!;
 
-    //Replay animation
-    p.style.animationName = "none";
-    p.offsetHeight; // eslint-disable-line @typescript-eslint/no-unused-expressions
-    p.style.animationName = "";
-    //p.style.animationName = "flipCard";
-    p.style.animationPlayState = "paused";
-    
-    if(p.style.animationPlayState !== "running"){
-      p.style.animationPlayState = "running";
+    setSelectedPessoa(pessoa);
+    thisSession.pessoa = parseInt(key);
 
-      if(thisSession.pessoa === 0){
-        p.textContent = "Jurídica";
+    if(thisSession.pessoa === 1){
+      o.style.transform = "translateX(-90px)";
+      o.style.opacity = '0';
+      o.style.visibility = 'hidden';
 
-        o.style.transform = "translateX(-90px)";
-        o.style.opacity = '0';
-        o.style.visibility = 'hidden';
+      ol.style.transform = "translateX(-90px)";
+      ol.style.opacity = '0';
+      ol.style.visibility = 'hidden';
 
-        ol.style.transform = "translateX(-90px)";
-        ol.style.opacity = '0';
-        ol.style.visibility = 'hidden';
+      setTimeout(() => {
+        o.style.display = 'none';
+        ol.style.display = 'none';
+      }, 250);
 
-        setTimeout(() => {
-          o.style.display = 'none';
-          ol.style.display = 'none';
-        }, 250);
-
-        thisSession.pessoa = 1;
-        classicMode(doc);
-      }
-      else{
-        o.style.display = 'flex';
-        ol.style.display = 'flex';
-        p.textContent = "Física";
-
-        setTimeout(() => {
-          o.style.transform = "translateX(0)";
-          o.style.opacity = '1';
-          o.style.visibility = 'visible';
-
-          ol.style.transform = "translate(0px, -22px)";
-          ol.style.opacity = '1';
-          ol.style.visibility = 'visible';
-
-        thisSession.pessoa = 0;
-        classicMode(doc);
-        }, 100);
-      }
-
+      classicMode(doc);
     }
+    else{
+      o.style.display = 'flex';
+      ol.style.display = 'flex';
 
+      setTimeout(() => {
+        o.style.transform = "translateX(0)";
+        o.style.opacity = '1';
+        o.style.visibility = 'visible';
+
+        ol.style.transform = "translate(0px, -22px)";
+        ol.style.opacity = '1';
+        ol.style.visibility = 'visible';
+      }, 100);
+
+      classicMode(doc);
+    }
   }
 
   function odontoChangeHandler(doc: Document){
@@ -151,7 +135,7 @@ export default function NavBar(){
     return(
         <nav className='mt-6'>
             <li>
-              <label className="label ms-3">Cidade:</label>
+              <label className="label ms-6">Cidade:</label>
               <Dropdown key={'cidades'} className={`${theme === 'light' ? 'bg-[#c7e1c7]' : 'bg-[#000d0d]'}`}>
                   <DropdownTrigger>
                       <Button className="text-xl ms-3 gap-1" variant="light" color="primary" endContent={<ChevronDown className="mt-1.5" size={15} />}>{selectedPlace}</Button>
@@ -168,10 +152,21 @@ export default function NavBar(){
               </Dropdown>
             </li>
             <li>
-              <label className="label">Pessoa:</label>
-              <div>
-                <Button id="pessoa" size={isSmallScreen ? 'sm' : 'md'} color="secondary" className="text-lg w-px text-insideTextColor" onPress={()=> pessoaChangeHandler(document)}>Física</Button>
-              </div>
+              <label className="label ms-4">Pessoa:</label>
+              <Dropdown key={'pessoa'} className={`${theme === 'light' ? 'bg-[#c7e1c7]' : 'bg-[#000d0d]'}`}>
+                <DropdownTrigger className="ml-0">
+                  <Button className="text-xl ms-3 gap-1" variant="light" color="primary" endContent={<ChevronDown className="mt-1.5" size={15} />}>{selectedPessoa}</Button>
+                </DropdownTrigger>
+                <DropdownMenu items={pessoas} itemClasses={{
+                    base: ["data-[hover=true]:text-insideTextColor"],
+                  }}>
+                  <DropdownSection>
+                    {pessoas.map((pessoa) => (
+                      <DropdownItem key={pessoa.key} color="secondary" onPress={() => {pessoaChangeHandler(pessoa.label, pessoa.key, document)}}>{pessoa.label}</DropdownItem>
+                    ))}
+                  </DropdownSection>
+                </DropdownMenu>
+              </Dropdown>
             </li>
             <li>
               <label id="odontolabel" className="label">Odonto:</label>
@@ -203,3 +198,18 @@ const places = [
     label: 'Brasília'
   },
 ];
+
+const pessoas = [
+  {
+    key: '0',
+    label: 'Física'
+  },
+  {
+    key: '1',
+    label: 'Jurídica'
+  },
+  {
+    key: '2',
+    label: 'Coletivo'
+  },
+]
